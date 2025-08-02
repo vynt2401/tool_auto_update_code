@@ -42,13 +42,13 @@ def start_watching(path="."):
     observer = Observer()
     observer.schedule(event_handler, path=path, recursive=True)
     observer.start()
-    print(f"🚀 Watching for changes in '{path}'... (Press Ctrl+C to stop)")
+    print(f"watching for changes in '{path}'... (u can press Ctrl+C to stop)")
     try:
         while True:
             time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
-        print("❌ Stopped.")
+        print("Stopped")
     observer.join()
 
 
