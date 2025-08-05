@@ -7,7 +7,7 @@ from watchdog.events import FileSystemEventHandler
 class GitAutoPusher(FileSystemEventHandler):
     def __init__(self, commit_message="Auto update"):
         self.commit_message = commit_message
-        self.ignore_extensions = {'.swp', '.tmp', '.pyc'}  # ignore temp files
+        self.ignore_extensions = {'.swp', '.tmp', '.pyc'} 
 
     def on_modified(self, event):
         if any(event.src_path.endswith(ext) for ext in self.ignore_extensions):
